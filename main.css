@@ -1,0 +1,436 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: auto;
+}
+
+body {
+    background-color: #451806e3;
+    font-family: cursive, sans-serif;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #ffe4c4;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    /* background-image: url(/img/pngtree-footprints-of-dog-footprint-footstep-png-image_8336304\ copy.png);
+    background-repeat: no-repeat;
+    background-position: 20px bottom;
+    background-size: 30%; */
+}
+
+.flex {
+    display: flex;
+}
+
+
+.pet-shop__title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+.pet-shop__title img {
+    width: 15%;
+    mix-blend-mode: multiply;
+    border-radius: 30px;
+    transition: all .3s;
+}
+.pet-shop__title img:hover {
+    transform: scale(1.1);
+}
+
+.pet-shop__title h2 {
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #451806e3;;
+}
+
+.pet-shop__content {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.pet-shop__content__top {
+    align-items: center;
+    gap: 10px;
+}
+.pet-shop__content__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pet-shop__stock {
+    width: 50%;
+    padding: 10px;
+    background-color: rgb(234, 187, 140);
+    border-radius: 15px;
+}
+
+.pet-shop__stock__table table{
+    background-color: bisque;
+    border: 10px solid rgba(69, 24, 6, 0.726);
+    text-align: center;
+}
+
+.pet-shop__stock__table-heading {
+    background-color: rgba(107, 126, 90, 0.779);
+}
+
+.pet-shop__stock__table-data {
+    background-color: rgba(222, 165, 137, 0.208);
+    
+}
+
+th {
+    width: 150px;
+    height: 50px;
+    color: rgb(18, 34, 17);
+    font-size: 18px;
+}
+
+td {
+    height: 30px;
+    border: none;
+    font-size: 18px;
+}
+
+.pet-shop__stock__details {
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.pet-shop__stock__price {
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.pet-shop__stock__price h4 {
+    color: rgb(98, 15, 15);
+    font-size: 20px;
+}
+
+.pet-shop__stock__price span {
+    padding: 15px 60px;
+    border: 3px solid rgb(98, 15, 15);
+    justify-content: flex-end;
+    border-radius: 7px;
+}
+
+h3 {
+    color: rgb(98, 15, 15);
+    font-size: 30px;
+    
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.pet-shop__stock__btn {
+    gap: 10px;
+}
+
+.stock-btn {
+    text-transform: uppercase;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 90px;
+    font-weight: 700;
+    font-family: cursive, sans-serif;
+}
+
+.create-button {
+    color: rgb(118, 57, 34);
+    background-color: bisque;
+}
+
+.create-button:active {
+    color: bisque;
+    background-color: rgb(118, 57, 34);
+}
+
+.edit-button {
+    color: rgb(11, 36, 11);
+    border: none;
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 45px;
+}
+
+.edit-button:active {
+    color: bisque;
+}
+
+.delete-button {
+    color: rgba(69, 24, 6, 0.726);
+    background: none;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 45px;
+}
+
+.delete-button:active {
+    color: bisque
+
+}
+
+
+/* /////////////////////////////////customres part */
+
+.pet-shop__customers {
+    border: 5px solid rgb(60, 17, 17);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(222, 165, 137, 0.208);
+    border-radius: 15px;
+    height: max-content;
+}
+
+/* .pet-shop__customers__table {
+    border: 5px solid rgb(60, 17, 17);
+    background-color: rgb(222, 165, 137);
+} */
+
+.pet-shop__customers__table table {
+    text-align: center;
+    width: 100%;
+}
+
+.pet-shop__customers__heading th {
+    font-size: 18px;
+    color: rgb(60, 17, 17);
+    
+}
+.pet-shop__customers td {
+    background-color: bisque;
+    padding: 10px;
+}
+
+
+.pet-shop__customers__title h3 {
+    color: rgb(98, 15, 15);
+    font-size: 30px;
+}
+
+/* //////     ORDER           //////////////////////////////////////////////////////////////////*/
+.pet-shop__orders {
+    padding: 10px;
+    width: 50%;
+    gap: 10px;
+    border-radius: 15px;
+    background-color: rgba(222, 165, 137, 0.208);
+    height: max-content;
+}
+
+.pet-shop__orders__table {
+    /* border: 5px solid rgb(60, 17, 17); */
+    background-color: rgb(60, 17, 17)
+}
+
+.pet-shop__orders__table th {
+    font-size: 18px;
+    color: rgb(60, 17, 17);
+    background-color: rgb(222, 165, 137);
+}
+
+.pet-shop__orders__table td {
+    background-color: bisque;
+    text-align: center;
+    padding: 10px;
+}
+
+.pet-shop__orders__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pet-shop__content__bottom {
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.pet-shop__footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    justify-content: space-between;
+}
+
+.pet-shop__footer img {
+    mix-blend-mode: multiply;
+    border-radius: 0 0 30px 0;
+    opacity: .9;
+    align-self: flex-end;
+    transform: translateX(10px);
+    z-index: 1;  
+    width: 50%;
+}
+
+.pet-shop__footer__text{
+    margin-top: 100px;
+}
+
+
+.pet-shop__footer p {
+   font-size: 60px; 
+   font-weight: bold;
+   padding-left: 50px;
+}
+
+.footer__text__main {
+    color: rgba(98, 15, 15, 0.829);
+    color: rgb(60, 17, 17);;
+}
+
+.footer__text__secondary {
+    color: rgb(152, 85, 21);
+    color: rgb(196, 139, 83);
+    transform: translateX(120px);
+}
+
+
+
+
+/* /////   MODAL   ///////////////////////////////////////////////////////////////////////////// */
+
+.modal {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(8, 7, 7, 0.932); 
+}
+
+.form-title h2 {
+    font-size: 30px;
+    color: rgb(11, 36, 11);
+    text-align: center;
+}
+
+.modal-content{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    height: 150px;
+    width: 50%;
+    background-color: rgb(107, 126, 90);
+    height: auto;
+    border-radius: 15px;
+    padding-bottom: 20px;
+    gap: 20px;
+}
+
+.modal-content__form {
+    width: 100%;
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    text-transform: uppercase;
+    background-color: bisque;
+    color: rgb(11, 36, 11);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.button-position {
+    align-items: flex-end;
+}
+
+.modal-btn:active {
+    background-color: rgb(11, 36, 11);
+    color: bisque;
+}
+
+.form {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-style {
+    height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+    border: none;
+    background-color: bisque;
+    color: rgb(11, 36, 11);
+    font-family: cursive, sans-serif;
+    outline: none;
+}
+
+.label-style {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(11, 36, 11);
+}
+
+.modal-close {
+    font-size: 40px;
+    color: bisque;
+    align-self: flex-start;
+    font-weight: bolder;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: rgb(11, 36, 11);;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+

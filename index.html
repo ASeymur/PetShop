@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <section class="container">
+        <div class="pet-shop__title">
+            <img src="img/62-624815_transparent-pet-shop-png-pets-shop-logo-png.png" alt="icon">
+            <h2>Welcome to the pet shop</h2>
+            <img src="img/cute-dog-logo_1051-3349.avif" alt="icon">
+        </div>
+        <div class="pet-shop__content">
+            <div class="pet-shop__content__top flex">
+                <div class="pet-shop__stock">
+                    <div class="pet-shop__stock__heading heading">
+                        <div class="pet-shop__stock__title">
+                            <h3>Pets stock</h3>
+                        </div>
+                        <div class="pet-shop__stock__btn flex">
+                            <button class="stock-btn create-button" id="create-btn">create</button>
+                        </div>
+                    </div>
+                    <div class="pet-shop__stock__table">
+                        <table id="stock-table">
+                            <tr class="pet-shop__stock__table-heading">
+                                <th id="stock__tbl__id">Id</th>
+                                <th id="stock__tbl__count">Count</th>
+                                <th id="stock__tbl__price">Price</th>
+                                <th id="stock__tbl__type">Type</th>
+                                <th id="stock__tbl__action">Action</th>
+                            </tr>
+                        
+                        </table>
+                    </div>
+                    <div class="pet-shop__stock__details flex">
+                        <div class="pet-shop__stock__price flex">
+                            <h4>Total sale</h4>
+                            <span id="daily-sale"></span>
+                        </div>
+                        <div class="pet-shop__stock__price flex">
+                            <h4>Stock price</h4>
+                            <span id="stock-price"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pet-shop__orders">
+                    <div class="pet-shop__orders__heading heading">
+                        <div class="pet-shop__orders__title">
+                            <h3>Orders</h3>
+                        </div>
+    
+                        <div class="pet-shop__stock__btn flex">
+                            <button class="stock-btn create-button" id="create-btn-orders">create</button>
+                        </div>
+                    </div>
+                    <div class="pet-shop__orders__table">
+                        <table id="orders-data">
+                            <tr class="pet-shop__orders__heading">
+                                <th id="orders__tbl__id">Id</th>
+                                <th id="orders__tbl__pin">PIN</th>
+                                <th id="orders__tbl__type">Type</th>
+                                <th id="orders__tbl__price">Price</th>
+                                <th id="orders__tbl__count">Count</th>
+                                <th id="orders__tbl__total-price">Total price</th>
+                            </tr>
+                            <tr class="pet-shop__orders__table-data" id="orders-database">
+                             
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="pet-shop__content__bottom flex">
+                <div class="pet-shop__customers">
+                    <div class="pet-shop__customers__heading heading">
+                        <div class="pet-shop__customers__title">
+                            <h3>Customers</h3>
+                        </div>
+                        <div class="pet-shop__stock__btn flex">
+                            <button class="stock-btn create-button" id="customer-create-btn">create</button>
+                        </div>
+                    </div>
+                    <div class="pet-shop__customers__table">
+                        <table id="customers-data">
+                            <tr class="pet-shop__customers__heading pet-shop__stoc__table-heading">
+                                <th id="customers__tbl__id">Id</th>
+                                <th id="customers__tbl__name">Full name</th>
+                                <th id="customers__tbl__phone">Phone</th>
+                                <th id="customers__tbl__pin">PIN</th>
+                                <th id="customers__tbl__phone">Total amount</th>
+                                <th id="customers__tbl__count">Count</th>
+                            </tr>
+                            <tr class="pet-shop__customers__table-data">
+                                <!-- <td id="customers-data-id">wq</td>
+                                <td id="customers-data-name">wqw</td>
+                                <td id="customers-data-surname">wq</td>
+                                <td id="customers-data-phone">wq</td>
+                                <td id="customers-data-count">wq</td> -->
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+             
+                <div class="pet-shop__footer">
+                    <div class="pet-shop__footer__text">
+                        <p class="footer__text__main">Pet Store</p>
+                        <p class="footer__text__secondary">to Your Door...</p>
+                    </div>
+                    <img src="img/sem.png" alt="bg-pets">
+                    <!-- <img src="img/qushlar qushla ne gozel oxuyur.jpg" class="pet-shop__orders__bg--birds" alt="bg-birds"> -->
+                </div>
+            </div>
+            
+        </div>
+
+        <div id="my-modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" id="close">&times;</span>
+                <div class="modal-content__form">
+                    <div class="form-title">
+                        <h2>Pets stock</h2>
+                    </div>
+                    <div class="form flex">
+                        <div class="form-item">
+                            <label for="form-count" class="label-style">Count</label>
+                            <input id="form-count" class="input-style" type="number">
+                        </div>
+                        <div class="form-item">
+                            <label for="form-price" class="label-style">Price</label>
+                            <input id="form-price" class="input-style" type="number">
+                        </div>
+                        <div class="form-item">
+                            <label for="form-type" class="label-style">Pet type</label>
+                            <select class="input-style" name="pets" id="form-type">
+                                <option value="add-pet"></option>
+                                <option value="">Dog</option>
+                                <option value="">Cat</option>
+                                <option value="">Parrot</option>
+                                <option value="">Hamster</option>
+                                <option value="">Spider</option>
+                                <option value="">Rabbit</option>
+                                <option value="">Fish</option>
+                            </select>
+                            <!-- <label for="form-type" class="label-style">Type</label>
+                            <input id="form-type" class="input-style" type="text"> -->
+                        </div>
+                        <div class="form-item button-position">
+                            <button class="modal-btn" id="modal-btn">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="edit-modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" id="edit-close">&times;</span>
+                <div class="modal-content__form">
+                    <div class="form-title">
+                        <h2>Edit stock</h2>
+                    </div>
+                    <div class="form flex">
+                        <div class="form-item">
+                            <label for="edit-form-id" class="label-style">Id</label>
+                            <input id="edit-form-id" readonly class="input-style" type="number">
+                        </div>
+                        <div class="form-item">
+                            <label for="edit-form-count" class="label-style">Count</label>
+                            <input id="edit-form-count" class="input-style" type="number">
+                        </div>
+                        <div class="form-item">
+                            <label for="edit-form-price" class="label-style">Price</label>
+                            <input id="edit-form-price" class="input-style" type="number">
+                        </div>
+                        <div class="form-item">
+                            <label for="edit-form-type" class="label-style">Pet type</label>
+                            <input id="edit-form-type" class="input-style" type="text">
+                        </div>
+                        <div class="form-item button-position">
+                            <button class="modal-btn" id="edit-modal-btn">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="order-modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" id="order-modal-close">&times;</span>
+                <div class="modal-content__form">
+                    <div class="form-title">
+                        <h2>Orders</h2>
+                    </div>
+                    <div class="form flex">
+                        <div class="form-item">
+                            <label for="form-type" class="label-style">PIN</label>
+                            <select class="input-style" name="pets" id="order-modal-pin">
+                                <!-- <option value="order-modal-add-pin"></option> -->
+
+                            </select>
+                        </div>
+                        <div class="form-item">
+                            <label for="order-form-type" class="label-style">Pet type</label>
+                            <select class="input-style" name="pets" id="pets-type">
+                                <!-- <option value="order-choose-type"></option> -->
+                               
+                            </select>
+                        </div>
+                        <div class="form-item">
+                            <label for="order-count" class="label-style">Count</label>
+                            <input id="order-count" class="input-style" type="number">
+                        </div>
+               
+                        <div class="form-item button-position">
+                            <button class="modal-btn" id="submit-btn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="customers-modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" id="customers-modal-close">&times;</span>
+                <div class="modal-content__form">
+                    <div class="form-title">
+                        <h2>Customers</h2>
+                    </div>
+                    <div class="form flex">
+                        <div class="form-item">
+                            <label for="customer-name" class="label-style">Full name</label>
+                            <input id="customer-name" class="input-style" type="text">
+                        </div>
+                        <div class="form-item">
+                            <label for="customer-phone" class="label-style">Phone</label>
+                            <input id="customer-phone" class="input-style" type="text">
+                        </div>
+                        <div class="form-item">
+                            <label for="customer-pin" class="label-style">Person Identification Number</label>
+                            <input id="customer-pin" class="input-style" type="text">
+                        </div>
+                 
+                        <div class="form-item button-position">
+                            <button class="modal-btn" id="customers-add-btn">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+  
+    </section>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
