@@ -184,6 +184,7 @@ function deleteFunction(givenId) {
         stockPriceCalc()
         typeRender()
         newData()
+        idd--
     }
 }
 
