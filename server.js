@@ -56,9 +56,49 @@ app.post('/pets', function (req, res) {
 
 app.delete('/pets/:id', function (req, res) {
   var id = req.params.id;
-  console.log(id);
-  res.status(200);
-  res.send({ result: `${id} deleted` });
+
+  for (let i = 0; i < allPets.length; i++) {
+    if (allPets[i].id == id) {
+      allPets.splice(i, 1);
+      res.send({ result: `${id} deleted` });
+    }
+  }
+  if (!allPets.includes(id)) {
+    res.send({ result: `${id} not found` });
+    return;
+  }
+});
+
+app.get('/pets/:id', function (req, res) {
+  var id = req.params.id;
+
+  for (let i = 0; i < allPets.length; i++) {
+    if (allPets[i].id == id) {
+      res.send({ result: allPets[i] });
+      return;
+    }
+  }
+
+  res.send({ result: `${id} not found` });
+  return;
+});
+
+app.put('/pets/:id', function (req, res) {
+  var id = req.params.id;
+  const { count, price } = req.body;
+
+  for (let i = 0; i < allPets.length; i++) {
+    if (allPets[i].id == id && count > 0 && price > 0) {
+      const newObj = allPets[i];
+      newObj.count = count;
+      newObj.price = price;
+
+      res.send({ result: newObj });
+      return;
+    }
+  }
+
+  res.send({ result: `${id} not found` });
   return;
 });
 
