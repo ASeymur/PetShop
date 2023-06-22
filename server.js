@@ -1,20 +1,21 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+const path = require('path');
 
 app.use(bodyParser.json());
-// app.get('/', function (req, res) {
-//   res.send('<b>My</b> first express http server');
-// });
 
-// app.get('/welcome', function (req, res) {
-//   res.send('<b>Hello</b> welcome to my http server made with express');
-//   res.status(200);
-// });
+app.use(express.static('public'));
+
 
 allPets = [];
 petTypes = ['Dog', 'Cat', 'Parrot', 'Hamster', 'Spider', 'Rabbit', 'Fish'];
 id = 0;
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname + '/index.html'));
+  //__dirname : It will resolve to your project folder.
+});
 
 app.get('/pets', function (req, res) {
   res.send(allPets);
